@@ -1,8 +1,8 @@
 # php-api
 
-What this does: This app would connect to a Salesforce Org and then select, update, delete accounts.
+What this does: This app would connect to a Salesforce Org and then select, update, create, delete accounts.
 
-Caution: Use this only in a free DE Org you have spun off for demo/test. This app is not tested for production.
+<b> Caution: Use this only in a free DE Org you have spun off for demo/test. This app is not tested for production. </b>
 
 Configurations:
 
