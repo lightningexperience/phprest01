@@ -1,0 +1,7 @@
+{
+  "name": "PHP REST",
+  "description": "A barebones php programs showing REST calls to Salesforce",
+  "repository": "https://github.com/lightningexperience/salesforce_restphp_example",
+  "logo": "https://github.com/lightningexperience/phprest01/blob/master/api1.gif",
+  "keywords": ["php", "example"]
+}
