@@ -12,9 +12,7 @@ Press the Deploy button.
 
 <a href="https://heroku.com/deploy"><img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy"></a>
 
-The The deploy button is created by putting in the following lines of code:
-<!––  <a href="https://heroku.com/deploy"><img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy"></a> ––>
-To read more about other options in Deploy Button: https://devcenter.heroku.com/articles/heroku-button
+To see how this deploy button was created, click edit this readme and the code would be visible. To read more about other options in Deploy Button: https://devcenter.heroku.com/articles/heroku-button
 
 Choose an app name.
 
