@@ -1,8 +1,4 @@
 # php-api
-<a href="https://heroku.com/deploy">
-  <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
-</a>
-
 
 What this does: This app would connect to a Salesforce Org and then select, update, delete accounts.
 
@@ -13,7 +9,9 @@ Configurations:
 Fork this repo.
 
 Press the Deploy button. The The deploy button is created by putting in the following lines of code in this readme:
+
 <a href="https://heroku.com/deploy"><img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy"></a>
+
 To read more about other options in Deploy Button: https://devcenter.heroku.com/articles/heroku-button
 
 Choose an app name.
