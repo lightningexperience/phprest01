@@ -1,5 +1,5 @@
 <?php
-require_once 'config.php';
+require_once 'https://phprest001.herokuapp.com/config.php';
 
 session_start();
 
