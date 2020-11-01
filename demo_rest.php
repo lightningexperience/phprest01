@@ -17,12 +17,12 @@ function show_accounts($instance_url, $access_token) {
     $response = json_decode($json_response, true);
 
     $total_size = $response['totalSize'];
-    echo '<div style="margin-left:200px; margin-top:200px;">';
+    echo '<div style="margin-left:10px; margin-top:200px;">';
     echo '<h1> Data from Salesforce via REST API</h1>';
 
     echo "$total_size record(s) returned<br/><br/>";
     foreach ((array) $response['records'] as $record) {
-       echo $record['Email__c'] . ", " . $record['Name'] . "<br/>";
+       echo $record['Name'] . ",  " . $record['Email__c'] . "<br/>";
     }
     echo "<br/>";
     echo '</div>';
@@ -63,60 +63,6 @@ function create_account($name, $instance_url, $access_token) {
     return $id;
 }
 
-function show_account($id, $instance_url, $access_token) {
-    $url = "$instance_url/services/data/v20.0/sobjects/Account/$id";
-
-    $curl = curl_init($url);
-    curl_setopt($curl, CURLOPT_HEADER, false);
-    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($curl, CURLOPT_HTTPHEADER,
-            array("Authorization: OAuth $access_token"));
-
-    $json_response = curl_exec($curl);
-
-    $status = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-
-    if ( $status != 200 ) {
-        die("Error: call to URL $url failed with status $status, response $json_response, curl_error " . curl_error($curl) . ", curl_errno " . curl_errno($curl));
-    }
-
-    echo "HTTP status $status reading account<br/><br/>";
-
-    curl_close($curl);
-
-    $response = json_decode($json_response, true);
-
-    foreach ((array) $response as $key => $value) {
-        echo "$key:$value<br/>";
-    }
-    echo "<br/>";
-}
-
-function update_account($id, $new_name, $city, $instance_url, $access_token) {
-    $url = "$instance_url/services/data/v20.0/sobjects/Account/$id";
-
-    $content = json_encode(array("Name" => $new_name, "BillingCity" => $city));
-
-    $curl = curl_init($url);
-    curl_setopt($curl, CURLOPT_HEADER, false);
-    curl_setopt($curl, CURLOPT_HTTPHEADER,
-            array("Authorization: OAuth $access_token",
-                "Content-type: application/json"));
-    curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "PATCH");
-    curl_setopt($curl, CURLOPT_POSTFIELDS, $content);
-
-    curl_exec($curl);
-
-    $status = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-
-    if ( $status != 204 ) {
-        die("Error: call to URL $url failed with status $status, curl_error " . curl_error($curl) . ", curl_errno " . curl_errno($curl));
-    }
-
-    echo "HTTP status $status updating account<br/><br/>";
-
-    curl_close($curl);
-}
 
 function delete_account($id, $instance_url, $access_token) {
     $url = "$instance_url/services/data/v20.0/sobjects/Account/$id";
@@ -166,18 +112,10 @@ function delete_account($id, $instance_url, $access_token) {
 
             show_account($id, $instance_url, $access_token);
 
-            show_accounts($instance_url, $access_token);
-
-            update_account($id, "My New Org, Inc", "San Francisco",
-                    $instance_url, $access_token);
-
-            show_account($id, $instance_url, $access_token);
-
-            show_accounts($instance_url, $access_token);
 
             delete_account($id, $instance_url, $access_token);
 
-            show_accounts($instance_url, $access_token);
+
             ?>
         </tt>
     </body>
