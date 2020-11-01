@@ -17,11 +17,12 @@ function show_accounts($instance_url, $access_token) {
     $response = json_decode($json_response, true);
 
     $total_size = $response['totalSize'];
+    echo '<div style="margin-left:200px; margin-top:200px;">';
+    echo '<h1> Data from Salesforce via REST API</h1>';
 
-echo '<div style="margin-left:200px;">';
     echo "$total_size record(s) returned<br/><br/>";
     foreach ((array) $response['records'] as $record) {
-        echo $record['Id'] . "" . $record['Name'] . "<br/>";
+       echo $record['Email__c'] . ", " . $record['Name'] . "<br/>";
     }
     echo "<br/>";
     echo '</div>';
