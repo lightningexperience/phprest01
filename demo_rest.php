@@ -57,8 +57,9 @@ function create_account($name, $instance_url, $access_token) {
     $response = json_decode($json_response, true);
 
     $id = $response["id"];
-
+echo '<h3> Record ID of New Account Created in Salesforce</h3>';
     echo "New record id $id<br/><br/>";
+    echo '<h1> Thank You!</h1>';
 
     return $id;
 }
