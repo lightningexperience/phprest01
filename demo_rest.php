@@ -17,8 +17,8 @@ function show_accounts($instance_url, $access_token) {
     $response = json_decode($json_response, true);
 
     $total_size = $response['totalSize'];
-    echo '<div style="margin-left:10px; margin-top:200px;">';
-    echo '<h1> Data from Salesforce via REST API</h1>';
+    echo '<div style="margin-left:200px; margin-top:10px;">';
+    echo '<h1> Data Retrieved from Salesforce via REST API</h1>';
 
     echo "$total_size record(s) returned<br/><br/>";
     foreach ((array) $response['records'] as $record) {
@@ -49,7 +49,7 @@ function create_account($name, $instance_url, $access_token) {
     if ( $status != 201 ) {
         die("Error: call to URL $url failed with status $status, response $json_response, curl_error " . curl_error($curl) . ", curl_errno " . curl_errno($curl));
     }
-    
+  echo '<h1> Data Updated in Salesforce via REST API</h1>';  
     echo "HTTP status $status creating account<br/><br/>";
 
     curl_close($curl);
