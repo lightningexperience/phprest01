@@ -2,7 +2,7 @@
 session_start();
 
 function show_accounts($instance_url, $access_token) {
-    $query = "SELECT Name, Id from Account LIMIT 100";
+    $query = "SELECT Name,Email__c,Phone FROM Account WHERE Email__c LIKE '%force.com%'";
     $url = "$instance_url/services/data/v20.0/query?q=" . urlencode($query);
 
     $curl = curl_init($url);
