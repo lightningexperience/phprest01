@@ -18,11 +18,13 @@ function show_accounts($instance_url, $access_token) {
 
     $total_size = $response['totalSize'];
 
+echo '<div style="margin-left:200px;">';
     echo "$total_size record(s) returned<br/><br/>";
     foreach ((array) $response['records'] as $record) {
-        echo $record['Id'] . ", " . $record['Name'] . "<br/>";
+        echo $record['Id'] . "" . $record['Name'] . "<br/>";
     }
     echo "<br/>";
+    echo '</div>';
 }
 
 function create_account($name, $instance_url, $access_token) {
