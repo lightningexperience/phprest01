@@ -49,6 +49,7 @@ function create_account($name, $instance_url, $access_token) {
     if ( $status != 201 ) {
         die("Error: call to URL $url failed with status $status, response $json_response, curl_error " . curl_error($curl) . ", curl_errno " . curl_errno($curl));
     }
+    echo '<div style="margin-left:200px; margin-top:10px;">';
   echo '<h1> Data Updated in Salesforce via REST API</h1>';  
     echo "HTTP status $status creating account<br/><br/>";
 
@@ -60,6 +61,7 @@ function create_account($name, $instance_url, $access_token) {
 echo '<h3> Record ID of New Account Created in Salesforce</h3>';
     echo "New record id $id<br/><br/>";
     echo '<h1> Thank You!</h1>';
+    echo '</div>';
 
     return $id;
 }
