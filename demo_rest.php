@@ -2,7 +2,7 @@
 session_start();
 
 function show_accounts($instance_url, $access_token) {
-    $query = "SELECT Name,Email__c,Phone FROM Account WHERE Email__c LIKE '%force.com%'";
+    $query = "SELECT Name,Email__c,Phone FROM Account WHERE Name LIKE '%GARY%'";
     $url = "$instance_url/services/data/v20.0/query?q=" . urlencode($query);
 
     $curl = curl_init($url);
