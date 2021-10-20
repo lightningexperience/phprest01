@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">   
+<title>Call Salesforce REST API</title>
+</head>
+<body>
+    <div style="margin: 30px; margin-top: 50px;"> <center> 
+        <h1>Example Integrated Application </h1>
+    
+    <script type="text/javascript" language="javascript">
+    if (location.protocol != "https:") {
+        document.write("OAuth will not work correctly from plain http. "+
+                        "Please use an https URL.");
+    } else {
+        document.write("<a href=\"oauth.php\">Click here to retrieve accounts from Salesforce via REST/OAuth.</a>");
+    }
+</script>
+    </div>  </center>
+     <center> <div style="margin: 30px; margin-top: 20px;"> 
+          <img src="api1.gif">
+         <p> Example usage of Salesforce Platform APIs: Update your own on-premise/cloud application by retrieving data from Salesforce application. </p>
+ <p>Step 1: Use the your own program to connect to Salesforce Platform APIs (REST/SOAP). Get the data from Salesforce. </p>
+ <p> Step 2: The from your program  connect to your own application and insert the data you got from Salesforce. </p>
+          <h2> We have embedded the Einstein Bot code copied from the embedded service in our Org below.</h2>
+         <!-- einstein bot code-->
+         <style type='text/css'>
+	.embeddedServiceHelpButton .helpButton .uiButton {
+		background-color: #005290;
+		font-family: "Arial", sans-serif;
+	}
+	.embeddedServiceHelpButton .helpButton .uiButton:focus {
+		outline: 1px solid #005290;
+	}
+</style>
+
+<script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
+<script type='text/javascript'>
+	var initESW = function(gslbBaseURL) {
+		embedded_svc.settings.displayHelpButton = true; //Or false
+		embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
+
+		//embedded_svc.settings.defaultMinimizedText = '...'; //(Defaults to Chat with an Expert)
+		//embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
+
+		//embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
+		//embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
+
+		// Settings for Chat
+		//embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
+			// Dynamically changes the button ID based on what the visitor enters in the pre-chat form.
+			// Returns a valid button ID.
+		//};
+		//embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
+		//embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
+		//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
+
+		embedded_svc.settings.enabledFeatures = ['LiveAgent'];
+		embedded_svc.settings.entryFeature = 'LiveAgent';
+
+		embedded_svc.init(
+			'https://ffaizi-20200408-demo.my.salesforce.com',
+			'https://sdodemo-main-16109844f55-163-1715b9effa9.force.com/tccc',
+			gslbBaseURL,
+			'00D4R000001VpAD',
+			'TD',
+			{
+				baseLiveAgentContentURL: 'https://c.la1-c2-ia4.salesforceliveagent.com/content',
+				deploymentId: '5724R000000XkhI',
+				buttonId: '5734R000000Xkjy',
+				baseLiveAgentURL: 'https://d.la1-c2-ia4.salesforceliveagent.com/chat',
+				eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I4R000000Ch8IUAS_172aa376f01',
+				isOfflineSupportEnabled: false
+			}
+		);
+	};
+
+	if (!window.embedded_svc) {
+		var s = document.createElement('script');
+		s.setAttribute('src', 'https://ffaizi-20200408-demo.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+		s.onload = function() {
+			initESW(null);
+		};
+		document.body.appendChild(s);
+	} else {
+		initESW('https://service.force.com');
+	}
+</script>
+         
+          <!-- einstein bot code-->
+         
+    <h2> The End</h2>
+         </div></center>
+        
+   
+      
+</body>
+</html>
