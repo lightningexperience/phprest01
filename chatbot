@@ -3,26 +3,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">   
-<title>Call Salesforce REST API</title>
+<title>Chat with Einstein Bot </title>
 </head>
 <body>
     <div style="margin: 30px; margin-top: 50px;"> <center> 
-        <h1>Example Integrated Application </h1>
+        <h1>Intelligent Conversations </h1>
     
-    <script type="text/javascript" language="javascript">
-    if (location.protocol != "https:") {
-        document.write("OAuth will not work correctly from plain http. "+
-                        "Please use an https URL.");
-    } else {
-        document.write("<a href=\"oauth.php\">Click here to retrieve accounts from Salesforce via REST/OAuth.</a>");
-    }
-</script>
+
     </div>  </center>
-     <center> <div style="margin: 30px; margin-top: 20px;"> 
-          <img src="api1.gif">
-         <p> Example usage of Salesforce Platform APIs: Update your own on-premise/cloud application by retrieving data from Salesforce application. </p>
- <p>Step 1: Use the your own program to connect to Salesforce Platform APIs (REST/SOAP). Get the data from Salesforce. </p>
- <p> Step 2: The from your program  connect to your own application and insert the data you got from Salesforce. </p>
+     <center> 
+     <div style="margin: 30px; margin-top: 20px;"> 
+
           <h2> We have embedded the Einstein Bot code copied from the embedded service in our Org below.</h2>
          <!-- einstein bot code-->
          <style type='text/css'>
@@ -90,7 +81,7 @@
          
           <!-- einstein bot code-->
          
-    <h2> The End</h2>
+    <h2> Thank You!</h2>
          </div></center>
         
    
